@@ -16,8 +16,7 @@ public class Equipment {
     private String model;
     private String serial;
     private double price;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "client_id",nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnore
     private Client client;
     private Date entryDate;
