@@ -41,20 +41,20 @@ public class EquipmentService {
         if (equipment.getSerial() != null)
             equipmentEdit.setSerial(equipment.getSerial());
 
-//        if (equipment.getCostValue() != null)
-//            equipmentEdit.setCostValue(equipment.getCostValue());
+        if (equipment.getCostValue() != null)
+            equipmentEdit.setCostValue(equipment.getCostValue());
 //
-//        if (equipment.getDefectForRepair() != null)
-//            equipmentEdit.setDefectForRepair(equipment.getDefectForRepair());
+        if (equipment.getDefectForRepair() != null)
+            equipmentEdit.setDefectForRepair(equipment.getDefectForRepair());
 //
-//        if (equipment.isAutorizado() != null)
-//            equipmentEdit.setAutorizado(equipment.isAutorizado());
-//        else
-//            equipmentEdit.setAutorizado(false);
-//        if (equipment.isPronto() != null)
-//            equipmentEdit.setPronto(equipment.isPronto());
-//        else
-//            equipmentEdit.setPronto(false);
+        if (equipment.isAutorizado())
+            equipmentEdit.setAutorizado(equipment.isAutorizado());
+        else
+            equipmentEdit.setAutorizado(false);
+        if (equipment.isPronto())
+            equipmentEdit.setPronto(equipment.isPronto());
+        else
+            equipmentEdit.setPronto(false);
         equipmentDao.save(equipmentEdit);
     }
 
