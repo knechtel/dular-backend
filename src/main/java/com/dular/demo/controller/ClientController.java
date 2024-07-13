@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 
 import org.springframework.web.bind.annotation.*;
 import com.dular.demo.DTO.ClientDto;
+
 import java.util.List;
 /**
  * Created by maiquelknechtel on 10/07/24.
@@ -16,7 +17,7 @@ public class ClientController {
 
     @Autowired
     private ClientService clientService;
-
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @PostMapping(value = "client-create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Client create(@RequestBody ClientDto clientDto){
         return clientService.create(clientDto.toBuild(clientDto));
