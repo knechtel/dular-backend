@@ -24,7 +24,10 @@ public class Equipment {
 
     private Date entryEquipmentWarranty;
     private Date departureEquipmentWarranty;
-
+    private Double costValue;
+    private String defectDefectForRepair;
+    private boolean autorizado;
+    private boolean pronto;
     public Equipment(Client client) {
         this.client = client;
     }
@@ -103,5 +106,45 @@ public class Equipment {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Double getCostValue() {
+        return costValue;
+    }
+
+    public void setCostValue(Double costValue) {
+        this.costValue = costValue;
+    }
+
+    public String getDefectForRepair() {
+        return defectDefectForRepair;
+    }
+
+    public void setDefectForRepair(String defectDefectForRepair) {
+        this.defectDefectForRepair = defectDefectForRepair;
+    }
+
+    public String getDefectDefectForRepair() {
+        return defectDefectForRepair;
+    }
+
+    public void setDefectDefectForRepair(String defectDefectForRepair) {
+        this.defectDefectForRepair = defectDefectForRepair;
+    }
+
+    public boolean isAutorizado() {
+        return autorizado;
+    }
+
+    public void setAutorizado(boolean autorizado) {
+        this.autorizado = autorizado;
+    }
+
+    public boolean isPronto() {
+        return pronto;
+    }
+
+    public void setPronto(boolean pronto) {
+        this.pronto = pronto;
     }
 }
