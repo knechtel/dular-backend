@@ -5,6 +5,8 @@ import com.dular.demo.repository.UserProfileDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by maiquelknechtel on 16/07/24.
  */
@@ -16,4 +18,5 @@ public class UserProfileService {
     public UserProfile save(UserProfile userProfile){
         return userProfileDao.save(userProfile);
     }
+    public List<UserProfile> findAll(){return (List<UserProfile>) userProfileDao.findAll();}
 }
