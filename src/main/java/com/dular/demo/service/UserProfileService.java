@@ -15,7 +15,7 @@ public class UserProfileService {
     @Autowired
     private UserProfileDao userProfileDao;
 
-    public UserProfile save(UserProfile userProfile){
+    public UserProfile create(UserProfile userProfile){
         return userProfileDao.save(userProfile);
     }
     public List<UserProfile> findAll(){return (List<UserProfile>) userProfileDao.findAll();}

@@ -1,5 +1,7 @@
 package com.dular.demo.DTO;
 
+import com.dular.demo.domain.UserProfile;
+
 /**
  * Created by maiquelknechtel on 13/07/24.
  */
@@ -31,5 +33,13 @@ public class UserProfileDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserProfile toBuild(UserProfileDto userProfileDto){
+        UserProfile userProfile = new UserProfile();
+        userProfile.setLogin(userProfileDto.getLogin());
+        userProfile.setPassword(userProfile.getPassword());
+        userProfile.setId(userProfileDto.getId());
+        return userProfile;
     }
 }
