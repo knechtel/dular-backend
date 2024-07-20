@@ -39,7 +39,9 @@ public class UserProfileDto {
         UserProfile userProfile = new UserProfile();
         userProfile.setLogin(userProfileDto.getLogin());
         userProfile.setPassword(userProfile.getPassword());
-        userProfile.setId(userProfileDto.getId());
+        if(userProfileDto.getId()!=null){
+            userProfile.setId(userProfileDto.getId());
+        }
         return userProfile;
     }
 }
