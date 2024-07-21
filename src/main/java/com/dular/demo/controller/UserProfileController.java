@@ -7,9 +7,9 @@ import com.dular.demo.domain.UserProfile;
 import com.dular.demo.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by maiquelknechtel on 18/07/24.
@@ -23,5 +23,9 @@ public class UserProfileController {
     @PostMapping(value = "user-create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserProfile create(@RequestBody UserProfileDto  userProfileDto){
         return userProfileService.create(userProfileDto.toBuild(userProfileDto));
+    }
+    @RequestMapping(value = "user-findAll", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+    public List<UserProfile> findAll(){
+        return userProfileService.findAll();
     }
 }
