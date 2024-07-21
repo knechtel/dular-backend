@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Created by maiquelknechtel on 18/07/24.
  */
+@RestController
 public class UserProfileController {
 
     @Autowired
@@ -24,6 +25,7 @@ public class UserProfileController {
     public UserProfile create(@RequestBody UserProfileDto  userProfileDto){
         return userProfileService.create(userProfileDto.toBuild(userProfileDto));
     }
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @RequestMapping(value = "user-findAll", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
     public List<UserProfile> findAll(){
         return userProfileService.findAll();
