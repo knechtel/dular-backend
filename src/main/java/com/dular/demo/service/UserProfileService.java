@@ -19,4 +19,8 @@ public class UserProfileService {
         return userProfileDao.save(userProfile);
     }
     public List<UserProfile> findAll(){return (List<UserProfile>) userProfileDao.findAll();}
+
+    public void delete(Integer id) {
+        userProfileDao.deleteById(id);
+    }
 }
