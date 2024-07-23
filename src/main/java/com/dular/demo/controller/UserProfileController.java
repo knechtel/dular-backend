@@ -30,4 +30,10 @@ public class UserProfileController {
     public List<UserProfile> findAll(){
         return userProfileService.findAll();
     }
+
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @RequestMapping(value = "user-delete", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+    public void delete(@RequestBody UserProfileDto userProfileDto){
+        userProfileService.delete(userProfileDto.getId());
+    }
 }
